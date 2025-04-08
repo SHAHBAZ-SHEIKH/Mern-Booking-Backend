@@ -47,6 +47,11 @@ app.use("/api/hotels",hotelsRouter)
 app.use("/api/rooms",roomsRouter)
 
 
+app.get("/", (request, response) => {
+    response.send("Hello World");
+});
+
+
 app.use((err,req,res,next)=>{
     const errorStatus = err.status || 500
     const errorMessage = err.message || "Something went Wrong"
